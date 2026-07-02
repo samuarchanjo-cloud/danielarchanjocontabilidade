@@ -31,7 +31,7 @@ function Hero() {
       <img
         src={heroImage}
         alt=""
-        className="absolute inset-0 h-full w-full origin-right scale-[0.78] object-cover object-[78%_center] md:origin-center md:scale-100 md:object-center"
+        className="absolute inset-0 h-full w-full origin-right translate-x-[18%] scale-[0.78] object-cover object-[78%_center] md:translate-x-0 md:origin-center md:scale-100 md:object-center"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/78 to-bg/6 md:from-bg md:via-bg/62 md:to-transparent" />
 
