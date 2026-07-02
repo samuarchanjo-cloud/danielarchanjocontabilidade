@@ -27,11 +27,11 @@ function Hero() {
   const [metricsRef, active] = useInView({ threshold: 0.25 });
 
   return (
-    <section id={hero.id} className="relative min-h-screen overflow-hidden pt-20">
+    <section id={hero.id} className="relative min-h-screen overflow-hidden bg-bg pt-20">
       <img
         src={heroImage}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover object-[68%_center] md:object-center"
+        className="absolute inset-0 h-full w-full origin-right scale-[0.88] object-cover object-[74%_center] md:origin-center md:scale-100 md:object-center"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/78 to-bg/6 md:from-bg md:via-bg/62 md:to-transparent" />
 
