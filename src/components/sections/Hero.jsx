@@ -27,15 +27,15 @@ function Hero() {
   const [metricsRef, active] = useInView({ threshold: 0.25 });
 
   return (
-    <section id={hero.id} className="relative min-h-screen overflow-hidden bg-bg pt-20">
+    <section id={hero.id} className="relative min-h-[112svh] overflow-hidden bg-bg pt-20 md:min-h-screen">
       <img
         src={heroImage}
         alt=""
-        className="absolute inset-0 h-full w-full origin-right translate-x-[24%] scale-[0.78] object-cover object-[78%_center] md:translate-x-0 md:origin-center md:scale-100 md:object-center"
+        className="hero-mobile-image absolute inset-0 h-full w-full object-cover md:object-center"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-bg from-[0%] via-bg/90 via-[48%] to-bg/10 to-[72%] md:from-bg md:via-bg/62 md:to-transparent" />
+      <div className="hero-mobile-overlay absolute inset-0" />
 
-      <div className="container-page relative z-10 flex min-h-[calc(100vh-80px)] items-center py-12">
+      <div className="container-page relative z-10 flex min-h-[calc(112svh-80px)] items-start pb-32 pt-12 md:min-h-[calc(100vh-80px)] md:items-center md:py-12">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
