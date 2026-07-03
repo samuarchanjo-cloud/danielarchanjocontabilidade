@@ -99,10 +99,6 @@ button {
     var(--color-bg-alt);
 }
 
-.hero-mobile-image {
-  object-position: 62% center;
-}
-
 .hero-mobile-overlay {
   background: linear-gradient(
     90deg,
@@ -112,6 +108,12 @@ button {
     rgba(250, 247, 241, 0.15) 68%,
     rgba(250, 247, 241, 0) 100%
   );
+}
+
+@media (max-width: 767.98px) {
+  .hero-title-mobile {
+    font-size: clamp(2.55rem, 12vw, 4rem);
+  }
 }
 
 @media (min-width: 768px) {

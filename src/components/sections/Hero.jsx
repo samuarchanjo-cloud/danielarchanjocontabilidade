@@ -27,15 +27,15 @@ function Hero() {
   const [metricsRef, active] = useInView({ threshold: 0.25 });
 
   return (
-    <section id={hero.id} className="relative min-h-[112svh] overflow-hidden bg-bg pt-20 md:min-h-screen">
+    <section id={hero.id} className="relative overflow-hidden bg-bg pt-20 md:min-h-screen">
       <img
         src={heroImage}
         alt=""
-        className="hero-mobile-image absolute inset-0 h-full w-full object-cover md:object-center"
+        className="absolute inset-0 hidden h-full w-full object-cover object-center md:block"
       />
-      <div className="hero-mobile-overlay absolute inset-0" />
+      <div className="hero-mobile-overlay absolute inset-0 hidden md:block" />
 
-      <div className="container-page relative z-10 flex min-h-[calc(112svh-80px)] items-start pb-32 pt-12 md:min-h-[calc(100vh-80px)] md:items-center md:py-12">
+      <div className="container-page relative z-10 flex pb-28 pt-10 md:min-h-[calc(100vh-80px)] md:items-center md:py-12">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ function Hero() {
           className="max-w-2xl"
         >
           <p className="eyebrow">{hero.eyebrow}</p>
-          <h1 className="heading-xl mt-5">
+          <h1 className="hero-title-mobile heading-xl mt-5">
             {hero.title.map((line) => (
               <span key={line} className="block">
                 {line}
@@ -76,7 +76,17 @@ function Hero() {
             </motion.a>
           </div>
 
-          <div ref={metricsRef} className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
+          <div className="relative mt-8 overflow-hidden rounded-2xl bg-bg-alt shadow-soft md:hidden">
+            <img
+              src={heroImage}
+              alt=""
+              className="h-[clamp(360px,58svh,460px)] w-full object-cover object-[74%_top]"
+            />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-bg/45 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-bg/35 to-transparent" />
+          </div>
+
+          <div ref={metricsRef} className="mt-8 grid grid-cols-2 gap-3 md:mt-10 md:grid-cols-4">
             {hero.metrics.map((metric) => (
               <Metric key={metric.label} metric={metric} active={active} />
             ))}
