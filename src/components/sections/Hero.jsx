@@ -31,9 +31,9 @@ function Hero() {
       <img
         src={heroImage}
         alt=""
-        className="absolute inset-0 h-full w-full origin-right translate-x-[18%] scale-[0.78] object-cover object-[78%_center] md:translate-x-0 md:origin-center md:scale-100 md:object-center"
+        className="absolute inset-0 h-full w-full origin-right translate-x-[24%] scale-[0.78] object-cover object-[78%_center] md:translate-x-0 md:origin-center md:scale-100 md:object-center"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/78 to-bg/6 md:from-bg md:via-bg/62 md:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-bg from-[0%] via-bg/90 via-[48%] to-bg/10 to-[72%] md:from-bg md:via-bg/62 md:to-transparent" />
 
       <div className="container-page relative z-10 flex min-h-[calc(100vh-80px)] items-center py-12">
         <motion.div
@@ -50,7 +50,7 @@ function Hero() {
               </span>
             ))}
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-text-secondary">
+          <p className="mt-6 max-w-xl text-lg font-semibold leading-8 text-text-secondary">
             {hero.subtitle}
           </p>
 
