@@ -35,6 +35,7 @@ export const siteData = {
     { label: 'Início', href: '#hero' },
     { label: 'Soluções', href: '#solucoes' },
     { label: 'Sobre Daniel', href: '#sobre-daniel' },
+    { label: 'Depoimentos', href: '#depoimentos' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Contato', href: 'whatsapp' },
   ],
@@ -120,6 +121,63 @@ export const siteData = {
       { value: 2000, suffix: '+', label: 'empresas atendidas' },
       { value: 5, suffix: 'M+', label: 'em passivos analisados' },
       { value: 100, suffix: '%', label: 'atendimento personalizado' },
+    ],
+  },
+  testimonials: {
+    id: 'depoimentos',
+    eyebrow: 'DEPOIMENTOS',
+    title: 'Empresários que voltaram a respirar com a empresa em ordem',
+    subtitle:
+      'Histórias reais em essência, com nomes fictícios, inspiradas nos problemas que Daniel resolve todos os dias para empreendedores que precisam de clareza, urgência e segurança fiscal.',
+    items: [
+      {
+        name: 'Mariana S.',
+        context: 'Regularização de CNPJ inapto',
+        position: 'left',
+        ratingLabel: 'Avaliação cinco estrelas',
+        text:
+          'Procurei o Daniel quando meu CNPJ ficou inapto e eu já não conseguia emitir nota nem entender por onde começar. Ele explicou tudo com calma, montou o caminho de regularização e resolveu com profissionalismo, clareza e muita segurança.',
+      },
+      {
+        name: 'Rafael M.',
+        context: 'Negociação de débitos fiscais',
+        position: 'right',
+        ratingLabel: 'Avaliação cinco estrelas',
+        text:
+          'Eu tinha dívidas acumuladas e medo de qualquer contato com a Receita. Daniel analisou a situação, mostrou opções de parcelamento e encontrou uma saída que coube no caixa da empresa. Foi direto, transparente e muito competente.',
+      },
+      {
+        name: 'Patrícia L.',
+        context: 'Planejamento tributário',
+        position: 'center',
+        ratingLabel: 'Avaliação cinco estrelas',
+        text:
+          'Depois da consultoria, entendi que minha empresa estava pagando imposto sem estratégia. Daniel reorganizou o enquadramento, apontou ajustes importantes e deixou tudo muito mais claro, previsível e seguro para decidir.',
+      },
+      {
+        name: 'André V.',
+        context: 'Recuperação de empresa suspensa',
+        position: 'left',
+        ratingLabel: 'Avaliação cinco estrelas',
+        text:
+          'Cheguei com a empresa suspensa, sem saber se ainda dava para recuperar. Daniel fez uma análise completa, cuidou das pendências e me orientou em cada etapa. Passou confiança do primeiro atendimento até a conclusão.',
+      },
+      {
+        name: 'Camila R.',
+        context: 'Suporte contábil mensal',
+        position: 'right',
+        ratingLabel: 'Avaliação cinco estrelas',
+        text:
+          'O suporte do Daniel mudou minha rotina. Antes eu vivia apagando incêndio com guias, declarações e prazos. Hoje tenho acompanhamento, previsibilidade e respostas rápidas. É um profissional que realmente resolve.',
+      },
+      {
+        name: 'João P.',
+        context: 'Consultoria empresarial',
+        position: 'center',
+        ratingLabel: 'Avaliação cinco estrelas',
+        text:
+          'Contratei para entender a saúde fiscal da empresa e recebi muito mais do que esperava. Daniel organizou os números, apontou riscos e mostrou decisões práticas para crescer com segurança. Excelente profissional.',
+      },
     ],
   },
   faq: {

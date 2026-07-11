@@ -6,6 +6,7 @@ import Hero from './components/sections/Hero.jsx';
 import Solucoes from './components/sections/Solucoes.jsx';
 import GestaoInteligente from './components/sections/GestaoInteligente.jsx';
 import SobreDaniel from './components/sections/SobreDaniel.jsx';
+import Depoimentos from './components/sections/Depoimentos.jsx';
 import FAQ from './components/sections/FAQ.jsx';
 import CTAFinal from './components/sections/CTAFinal.jsx';
 
@@ -18,6 +19,7 @@ function App() {
         <Solucoes />
         <GestaoInteligente />
         <SobreDaniel />
+        <Depoimentos />
         <FAQ />
         <CTAFinal />
       </main>
