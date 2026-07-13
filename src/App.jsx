@@ -1,32 +1,39 @@
-import React from 'react';
-import Header from './components/layout/Header.jsx';
-import Footer from './components/layout/Footer.jsx';
-import WhatsAppFloat from './components/layout/WhatsAppFloat.jsx';
-import Hero from './components/sections/Hero.jsx';
-import Solucoes from './components/sections/Solucoes.jsx';
-import GestaoInteligente from './components/sections/GestaoInteligente.jsx';
-import SobreDaniel from './components/sections/SobreDaniel.jsx';
-import Depoimentos from './components/sections/Depoimentos.jsx';
-import FAQ from './components/sections/FAQ.jsx';
-import CTAFinal from './components/sections/CTAFinal.jsx';
+import Header from './components/Header.jsx'
+import Hero from './components/Hero.jsx'
+import Abertura from './components/Abertura.jsx'
+import Dor from './components/Dor.jsx'
+import Solucao from './components/Solucao.jsx'
+import Beneficios from './components/Beneficios.jsx'
+import Demo from './components/Demo.jsx'
+import Autoridade from './components/Autoridade.jsx'
+import Oferta from './components/Oferta.jsx'
+import Objecoes from './components/Objecoes.jsx'
+import Garantia from './components/Garantia.jsx'
+import Urgencia from './components/Urgencia.jsx'
+import Faq from './components/Faq.jsx'
+import CtaFinal from './components/CtaFinal.jsx'
+import PsFooter from './components/PsFooter.jsx'
+import StickyCta from './components/StickyCta.jsx'
 
-function App() {
+export default function App() {
   return (
     <>
       <Header />
-      <main>
-        <Hero />
-        <Solucoes />
-        <GestaoInteligente />
-        <SobreDaniel />
-        <Depoimentos />
-        <FAQ />
-        <CTAFinal />
-      </main>
-      <Footer />
-      <WhatsAppFloat />
+      <Hero />
+      <Abertura />
+      <Dor />
+      <Solucao />
+      <Beneficios />
+      <Demo />
+      <Autoridade />
+      <Oferta />
+      <Objecoes />
+      <Garantia />
+      <Urgencia />
+      <Faq />
+      <CtaFinal />
+      <PsFooter />
+      <StickyCta />
     </>
-  );
+  )
 }
-
-export default App;

@@ -2,143 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color-bg: #FAF7F1;
-  --color-bg-alt: #F3ECDD;
-  --color-navy: #16283D;
-  --color-navy-light: #3A4E63;
-  --color-gold: #B98F4A;
-  --color-gold-light: #D8B876;
-  --color-white: #FFFFFF;
-  --color-text: #2B2F36;
-  --color-text-secondary: #5B6472;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: Inter, sans-serif;
-  text-rendering: optimizeLegibility;
+  background: #0A0A0B;
+  color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-}
-
-::selection {
-  background: rgba(185, 143, 74, 0.25);
-  color: var(--color-navy);
-}
-
-.container-page {
-  width: min(1120px, calc(100% - 32px));
-  margin-inline: auto;
-}
-
-.section-pad {
-  padding-block: clamp(72px, 9vw, 112px);
-}
-
-.eyebrow {
-  color: var(--color-gold);
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.heading-xl,
-.heading-lg,
-.heading-md {
-  color: var(--color-navy);
-  font-family: Fraunces, serif;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.03;
-}
-
-.heading-xl {
-  font-size: clamp(3rem, 6vw, 5.6rem);
-}
-
-.heading-lg {
-  font-size: clamp(2.25rem, 4.4vw, 4.1rem);
-}
-
-.heading-md {
-  font-size: clamp(1.75rem, 3vw, 2.7rem);
-}
-
-.focus-ring:focus-visible {
-  outline: 3px solid rgba(185, 143, 74, 0.42);
-  outline-offset: 4px;
-}
-
-.gold-glow {
-  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
-}
-
-.image-placeholder {
-  background:
-    linear-gradient(135deg, rgba(22, 40, 61, 0.08), rgba(185, 143, 74, 0.16)),
-    var(--color-bg-alt);
-}
-
-.hero-mobile-overlay {
-  background: linear-gradient(
-    90deg,
-    rgba(250, 247, 241, 0.98) 0%,
-    rgba(250, 247, 241, 0.9) 28%,
-    rgba(250, 247, 241, 0.55) 48%,
-    rgba(250, 247, 241, 0.15) 68%,
-    rgba(250, 247, 241, 0) 100%
-  );
-}
-
-@media (max-width: 767.98px) {
-  .hero-title-mobile {
-    font-size: clamp(2.55rem, 12vw, 4rem);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
-@media (min-width: 768px) {
-  .hero-mobile-overlay {
-    background: linear-gradient(
-      90deg,
-      var(--color-bg) 0%,
-      rgba(250, 247, 241, 0.62) 50%,
-      rgba(250, 247, 241, 0) 100%
-    );
-  }
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #C9A227;
+  outline-offset: 2px;
 }
 
-@keyframes whatsapp-pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(185, 143, 74, 0.38);
-  }
-  70% {
-    box-shadow: 0 0 0 16px rgba(185, 143, 74, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(185, 143, 74, 0);
-  }
-}
-
-.pulse-whatsapp {
-  animation: whatsapp-pulse 2.6s ease-out infinite;
+.bar-fill-gradient {
+  background: linear-gradient(90deg, #C9A227, #E8D48A);
 }
