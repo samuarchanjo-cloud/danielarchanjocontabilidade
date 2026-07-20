@@ -1,111 +1,115 @@
-# Calculadora de Honorários Contábeis — Página de Vendas (React)
+# Archanjo Consultoria Empresarial — Landing Page
 
-Landing page de vendas do produto digital "Calculadora de Honorários Contábeis",
-agora como projeto React + Vite + Tailwind, com build de produção de verdade.
+Landing page para campanhas de tráfego pago (Meta Ads), focada em geração de
+conversas qualificadas no WhatsApp para regularização de CNPJ, MEI e Simples
+Nacional.
 
-## Estrutura
+Projeto estático (HTML/CSS/JS puro), empacotado com [Vite](https://vitejs.dev)
+para desenvolvimento local com hot reload e build otimizado para produção.
+
+## Estrutura do projeto
 
 ```
 .
-├── index.html              ← entrada do Vite (fontes Google Fonts)
-├── package.json            ← dependências e scripts (npm install / npm run build)
-├── package-lock.json
+├── index.html              # Entry point (HTML)
+├── src/
+│   ├── css/
+│   │   └── style.css       # Estilos (design tokens, componentes, responsivo)
+│   └── js/
+│       └── script.js       # Comportamento (reveal on scroll, parallax, FAQ,
+│                            # lightbox, tilt, links de WhatsApp)
+├── public/
+│   └── assets/
+│       ├── img/             # Fotos (hero, seção "Quem sou")
+│       └── prints/          # Prints de depoimentos do WhatsApp
+├── package.json
 ├── vite.config.js
-├── tailwind.config.js
-├── postcss.config.js
-├── vercel.json             ← configuração de deploy da Vercel
-├── .gitignore
-├── public/                 ← arquivos estáticos (vazio por padrão)
-└── src/
-    ├── main.jsx             ← ponto de entrada React
-    ├── App.jsx              ← monta todas as seções, na ordem
-    ├── index.css            ← Tailwind + pequenos ajustes globais
-    ├── assets/
-    │   ├── hero-daniel.jpg       ← foto do hero (extraída do base64 original)
-    │   └── autoridade-daniel.jpg ← foto da seção "quem criou"
-    └── components/
-        ├── Header.jsx
-        ├── Hero.jsx
-        ├── Abertura.jsx
-        ├── Dor.jsx
-        ├── Solucao.jsx
-        ├── Beneficios.jsx
-        ├── Demo.jsx
-        ├── Autoridade.jsx
-        ├── Oferta.jsx
-        ├── Objecoes.jsx
-        ├── Garantia.jsx
-        ├── Urgencia.jsx
-        ├── Faq.jsx               ← accordion com estado React (useState)
-        ├── CtaFinal.jsx
-        ├── PsFooter.jsx
-        ├── StickyCta.jsx         ← CTA fixo mobile
-        ├── CtaButton.jsx         ← botão reutilizável
-        └── SectionHeading.jsx    ← label + título reutilizável
+└── .gitignore
 ```
 
-Todo o copy (textos em português) foi preservado exatamente como no arquivo original.
-As duas fotos que estavam embutidas em base64 no HTML foram extraídas para arquivos
-de imagem reais em `src/assets/`, e o Vite cuida de otimizá-las no build.
+Arquivos dentro de `public/` são servidos como estão, na raiz do site — por
+isso o HTML/CSS referenciam as imagens como `assets/img/...` e
+`assets/prints/...`, sem prefixo `public/`.
 
-## Como editar no VS Code
+## Pré-requisitos
 
-1. Abra a pasta inteira no VS Code (`Arquivo > Abrir Pasta`)
-2. Rode `npm install` uma vez (veja SETUP.md)
-3. Rode `npm run dev` para ver a página com hot-reload em tempo real
-4. Edite os arquivos dentro de `src/components/` — cada seção da página é um
-   componente separado
+- [Node.js](https://nodejs.org) 18 ou superior
+- npm (instalado junto com o Node)
 
-Pontos comuns de edição:
-- Preço: arquivo `src/components/Oferta.jsx` (bloco de preço) e `StickyCta.jsx`
-- Textos de copy: estão em português, direto dentro de cada componente
-- Link do botão de compra: busque por `href="#"` ou `href="#oferta"` e troque
-  pelo link real do checkout do Kiwify
-- Cores: `tailwind.config.js`, na seção `theme.extend.colors` (`gold`, `black`, etc.)
-- Fontes: `index.html` (link do Google Fonts) + `tailwind.config.js` (`fontFamily`)
-
-## Como subir no GitHub
+## Rodando localmente
 
 ```bash
-cd calculadora-honorarios-lp
-git init
-git add .
-git commit -m "primeira versão da página de vendas (React)"
-git branch -M main
-git remote add origin https://github.com/SEU_USUARIO/NOME_DO_REPO.git
-git push -u origin main
+npm install
+npm run dev
 ```
 
-(Crie o repositório vazio no GitHub antes, em github.com/new — sem README,
-sem .gitignore, sem license, para não dar conflito com este push.)
+O terminal vai mostrar um endereço local (geralmente
+`http://localhost:5173`). Abra no navegador — qualquer alteração em
+`index.html`, `src/css/style.css` ou `src/js/script.js` recarrega
+automaticamente.
 
-## Como fazer deploy na Vercel
+## Build de produção
 
-**Opção A — pelo site (mais simples):**
-1. Entre em vercel.com e faça login com sua conta GitHub
-2. Clique em "Add New… > Project"
-3. Selecione o repositório que você acabou de subir
-4. A Vercel detecta automaticamente que é um projeto Vite (build command
-   `npm run build`, output `dist`) — clique em "Deploy"
-5. Em poucos segundos você recebe uma URL tipo `nome-do-projeto.vercel.app`
+```bash
+npm run build
+```
 
-**Opção B — pelo terminal:**
+Gera a pasta `dist/` com os arquivos otimizados (HTML/CSS/JS minificados,
+prontos para deploy).
+
+Para conferir o build localmente antes de publicar:
+
+```bash
+npm run preview
+```
+
+## Deploy na Vercel
+
+### Opção 1 — CLI
+
 ```bash
 npm install -g vercel
-cd calculadora-honorarios-lp
 vercel
 ```
-Siga as perguntas no terminal (login, nome do projeto, etc.)
 
-## Atualizando a página depois de publicada
+Siga o passo a passo interativo. A Vercel detecta o Vite automaticamente
+(build command `vite build`, output directory `dist`).
 
-Qualquer alteração que você fizer nos arquivos de `src/` e enviar pro GitHub
-(`git add .`, `git commit`, `git push`) atualiza automaticamente o site
-publicado na Vercel — não precisa fazer deploy manual de novo.
+### Opção 2 — Painel da Vercel (recomendado)
 
-## Domínio próprio
+1. Suba este projeto para um repositório no GitHub/GitLab/Bitbucket.
+2. Em [vercel.com/new](https://vercel.com/new), importe o repositório.
+3. A Vercel detecta o framework "Vite" automaticamente:
+   - **Build Command:** `vite build`
+   - **Output Directory:** `dist`
+   - **Install Command:** `npm install`
+4. Clique em Deploy.
 
-Depois do primeiro deploy, em vercel.com vá em
-`Seu Projeto > Settings > Domains` e adicione seu domínio já registrado.
-A Vercel mostra os registros DNS que você precisa configurar no painel
-onde comprou o domínio.
+Nenhuma variável de ambiente é necessária — o projeto não depende de nenhuma
+API externa além do link direto para o WhatsApp (`wa.me`).
+
+## Configuração do WhatsApp
+
+O número e a mensagem pré-preenchida do botão de WhatsApp ficam no topo de
+`src/js/script.js`:
+
+```js
+var WHATSAPP_NUMBER = "5521983727520";
+var MSG_REGULARIZAR = "Olá, Daniel! Vim pelo site e gostaria de consultar a situação do meu CNPJ.";
+```
+
+A janela de reenquadramento no Simples Nacional (usada na nota de urgência da
+seção final) também é configurável ali, no objeto `SIMPLES_REENQUADRAMENTO`.
+
+## Nota de segurança
+
+`npm audit` pode reportar uma vulnerabilidade moderada/alta relacionada ao
+`esbuild` interno do Vite 5.x ([GHSA-67mh-4wv8-2f99](https://github.com/advisories/GHSA-67mh-4wv8-2f99)).
+Ela afeta apenas o servidor de desenvolvimento local (`npm run dev`) e não tem
+impacto no build de produção nem no site publicado. A correção completa exige
+migrar para o Vite 6+, o que pode trazer mudanças incompatíveis — avalie isso
+separadamente se quiser atualizar.
+
+## Licença
+
+Uso exclusivo da Archanjo Consultoria Empresarial.
